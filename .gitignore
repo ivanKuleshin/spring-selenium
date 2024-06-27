@@ -5,6 +5,9 @@
 # Log file
 **/*.log
 
+# Gradle files
+.gradle
+
 # BlueJ files
 **/*.ctxt
 
