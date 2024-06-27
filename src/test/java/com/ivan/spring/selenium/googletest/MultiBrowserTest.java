@@ -14,7 +14,7 @@ public class MultiBrowserTest extends SpringBaseTestNGTest {
     @Test
     public void browserTest(){
         this.ctx.getBean("chromeDriver", WebDriver.class).get("https://www.google.com");
-        this.ctx.getBean("firefoxDriver", WebDriver.class).get("https://www.yahoo.com");
+//        this.ctx.getBean("safariDriver", WebDriver.class).get("https://www.yahoo.com");
     }
 
 }

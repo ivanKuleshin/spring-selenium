@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="spring-boot">
+    <test name="test-1">
+        <classes>
+            <class name="com.ivan.spring.selenium.googletest.Google1Test" />
+        </classes>
+    </test>
+    <test name="test-2">
+        <classes>
+            <class name="com.ivan.spring.selenium.googletest.Google2Test" />
+        </classes>
+    </test>
+    <test name="test-3">
+        <classes>
+            <class name="com.ivan.spring.selenium.googletest.MultiBrowserTest" />
+        </classes>
+    </test>
+<!--    <test name="test-4">-->
+<!--        <classes>-->
+<!--            <class name="com.ivan.spring.selenium.CucumberRunnerTest" />-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>

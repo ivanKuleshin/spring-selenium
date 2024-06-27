@@ -17,6 +17,12 @@ public class SearchComponent extends Base {
     @FindBy(name = "btnK")
     private List<WebElement> searchBtns;
 
+    @FindBy(xpath = "//h1[text()='Before you continue to Google']")
+    private WebElement beforeYouContinueToGoogleHeader;
+
+    @FindBy(xpath = "//div[text()='Accept all']/parent::button")
+    private WebElement acceptAllBtn;
+
     public void search(final String keyword){
         this.searchBox.sendKeys(keyword);
         this.searchBox.sendKeys(Keys.TAB);
@@ -30,5 +36,12 @@ public class SearchComponent extends Base {
     @Override
     public boolean isAt() {
         return this.wait.until((d) -> this.searchBox.isDisplayed());
+    }
+
+    public void acceptCookies() {
+        if(beforeYouContinueToGoogleHeader.isDisplayed()){
+            this.wait.until((d) -> this.acceptAllBtn.isDisplayed());
+            this.acceptAllBtn.click();
+        }
     }
 }

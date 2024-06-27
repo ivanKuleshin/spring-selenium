@@ -52,17 +52,17 @@ dependencies {
     testCompileOnly "org.projectlombok:lombok:$lombokVersion"
 }
 
-test {
-    enabled = false
+tasks.register("springTest", Test) {
+    group = "verification"
     useTestNG {
-        // specify test suite
-         suites 'src/test/resources/testng.xml'
+        suites("src/test/resources/testng-suite.xml")
+    }
+}
 
-        // configure parallel execution
-        parallel = 'methods'
-        threadCount = 2
-
-        // Configure the number of threads to use for data provider
-        // systemProperty 'dataproviderthreadcount', '2'
+tasks.register('cucumberTest', Test) {
+    logger.info("Running cucumber tests")
+    group = "verification"
+    useTestNG{
+        suites("src/test/resources/cucumber-suite.xml")
     }
 }

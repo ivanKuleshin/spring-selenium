@@ -5,8 +5,8 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-        features = "classpath:features",
-        glue = "com.udemy.spring.springselenium.bdd",
+        features = "src/test/resources/features",
+        glue = "com.ivan.spring.selenium.bdd",
         tags =  "@visa",
         plugin = {
                 "pretty",
@@ -16,7 +16,7 @@ import org.testng.annotations.DataProvider;
 public class CucumberRunnerTest extends AbstractTestNGCucumberTests {
 
     @Override
-    @DataProvider(parallel = true)
+    @DataProvider(parallel = false)
     public Object[][] scenarios() {
         return super.scenarios();
     }

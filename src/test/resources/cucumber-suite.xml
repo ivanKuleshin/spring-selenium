@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="CucumberSuite">
+    <test name="CucumberTests">
+        <classes>
+            <class name="com.ivan.spring.selenium.CucumberRunnerTest" />
+        </classes>
+    </test>
+</suite>
