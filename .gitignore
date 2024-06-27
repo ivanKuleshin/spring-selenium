@@ -6,6 +6,7 @@
 **/*.log
 
 # Gradle files
+**/gradle/
 .gradle
 
 # BlueJ files
