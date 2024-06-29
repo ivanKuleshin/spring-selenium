@@ -1,13 +1,13 @@
 package com.ivan.spring.selenium.page.google;
 
 import com.ivan.spring.selenium.kelvin.annotation.Page;
-import com.ivan.spring.selenium.page.Base;
+import com.ivan.spring.selenium.page.BasePage;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
 @Page
-public class GooglePage extends Base {
+public class GooglePage extends BasePage {
 
     @Getter
     @Autowired
@@ -31,8 +31,8 @@ public class GooglePage extends Base {
     }
 
     @Override
-    public boolean isAt() {
-        return this.searchComponent.isAt();
+    public boolean hasLoaded() {
+        return this.searchComponent.hasLoaded();
     }
 
     public void close() {

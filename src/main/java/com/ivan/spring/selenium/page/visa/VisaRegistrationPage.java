@@ -1,7 +1,7 @@
 package com.ivan.spring.selenium.page.visa;
 
 import com.ivan.spring.selenium.kelvin.annotation.Page;
-import com.ivan.spring.selenium.page.Base;
+import com.ivan.spring.selenium.page.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Page
-public class VisaRegistrationPage extends Base {
+public class VisaRegistrationPage extends BasePage {
 
     private static final Logger logger = LoggerFactory.getLogger(VisaRegistrationPage.class);
 
@@ -92,7 +92,7 @@ public class VisaRegistrationPage extends Base {
     }
 
     @Override
-    public boolean isAt() {
+    public boolean hasLoaded() {
         return this.wait.until((d) -> this.firstName.isDisplayed());
     }
 }

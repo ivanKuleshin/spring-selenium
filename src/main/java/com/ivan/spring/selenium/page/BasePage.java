@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import jakarta.annotation.PostConstruct;
 
-public abstract class Base {
+public abstract class BasePage {
 
     @Autowired
     protected WebDriver driver;
@@ -20,6 +20,6 @@ public abstract class Base {
         PageFactory.initElements(this.driver, this);
     }
 
-    public abstract boolean isAt();
+    public abstract boolean hasLoaded();
 
 }

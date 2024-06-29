@@ -1,4 +1,4 @@
-package com.ivan.spring.selenium.bdd;
+package com.ivan.spring.selenium.cucumber.glue;
 
 import com.ivan.spring.selenium.kelvin.annotation.LazyAutowired;
 import com.ivan.spring.selenium.page.visa.VisaRegistrationPage;
@@ -19,7 +19,7 @@ public class VisaSteps {
     @Given("I am on VISA registration form")
     public void launchSite() {
         this.registrationPage.goTo();
-        Assert.assertTrue(this.registrationPage.isAt());
+        Assert.assertTrue(this.registrationPage.hasLoaded());
     }
 
     @When("I select my from country {string} and to country {string}")
@@ -54,7 +54,7 @@ public class VisaSteps {
 
     @Then("I should see get the confirmation number")
     public void verifyConfirmationNumber() {
-        boolean isEmpty = StringUtils.isEmpty(this.registrationPage.getConfirmationNumber().trim());
+        boolean isEmpty = this.registrationPage.getConfirmationNumber().trim().isEmpty();
         Assert.assertFalse(isEmpty);
     }
 }

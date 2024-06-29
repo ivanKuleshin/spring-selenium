@@ -1,7 +1,7 @@
 package com.ivan.spring.selenium.page.window;
 
 import com.ivan.spring.selenium.kelvin.annotation.Page;
-import com.ivan.spring.selenium.page.Base;
+import com.ivan.spring.selenium.page.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.util.List;
 
 @Page
-public class MainPage extends Base {
+public class MainPage extends BasePage {
 
     @FindBy(tagName = "a")
     private List<WebElement> links;
@@ -26,7 +26,7 @@ public class MainPage extends Base {
     }
 
     @Override
-    public boolean isAt() {
+    public boolean hasLoaded() {
         return this.wait.until((d) -> !this.links.isEmpty());
     }
 

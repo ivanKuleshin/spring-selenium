@@ -2,7 +2,7 @@ package com.ivan.spring.selenium.page.flights;
 
 import com.ivan.spring.selenium.kelvin.annotation.Page;
 import com.ivan.spring.selenium.kelvin.annotation.TakeScreenshot;
-import com.ivan.spring.selenium.page.Base;
+import com.ivan.spring.selenium.page.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Page
-public class FlightPage extends Base {
+public class FlightPage extends BasePage {
 
     @FindBy(css = "nav.rlGvde a")
     private List<WebElement> elements;
@@ -30,7 +30,7 @@ public class FlightPage extends Base {
     }
 
     @Override
-    public boolean isAt() {
+    public boolean hasLoaded() {
         return this.wait.until((d) -> !this.elements.isEmpty());
     }
 

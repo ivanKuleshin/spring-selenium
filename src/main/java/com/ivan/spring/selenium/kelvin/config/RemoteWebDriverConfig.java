@@ -1,7 +1,7 @@
 package com.ivan.spring.selenium.kelvin.config;
 
 import com.ivan.spring.selenium.kelvin.annotation.LazyConfiguration;
-import com.ivan.spring.selenium.kelvin.annotation.ThreadScopeBean;
+import com.ivan.spring.selenium.kelvin.annotation.ThreadLocalBean;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -20,13 +20,13 @@ public class RemoteWebDriverConfig {
     @Value("${selenium.grid.url}")
     private URL url;
 
-    @ThreadScopeBean
+    @ThreadLocalBean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     public WebDriver remoteFirefoxDriver(){
         return new RemoteWebDriver(this.url, new ChromeOptions());
     }
 
-    @ThreadScopeBean
+    @ThreadLocalBean
     @ConditionalOnMissingBean
     public WebDriver remoteChromeDriver(){
         return new RemoteWebDriver(this.url, new FirefoxOptions());

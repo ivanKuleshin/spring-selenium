@@ -29,7 +29,7 @@ public class WindowSwitchTest extends SpringBaseTestNGTest {
     @BeforeClass
     public void setup(){
         this.mainPage.goTo();
-        this.mainPage.isAt();
+        this.mainPage.hasLoaded();
         this.mainPage.launchAllWindows();
     }
 

@@ -5,15 +5,18 @@
 # Log file
 **/*.log
 
+# Build directory
+**/build/
+
+# Logs directory
+**/logs/
+
 # Gradle files
 **/gradle/
 **/.gradle/
 
-# screenshots folder
+# Screenshots folder
 **/screenshots/
-
-# BlueJ files
-**/*.ctxt
 
 # Mobile Tools for Java (J2ME)
 **/.mtj.tmp/
@@ -27,25 +30,9 @@
 **/*.tar.gz
 **/*.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-**/hs_err_pid*
-
-### Maven template
-**/target/
-**/pom.xml.tag
-**/pom.xml.releaseBackup
-**/pom.xml.versionsBackup
-**/pom.xml.next
-**/release.properties
-**/dependency-reduced-pom.xml
-**/buildNumber.properties
-**/.mvn/timing.properties
-**/.mvn/wrapper/maven-wrapper.jar
-
+# Idea files
 **/*.iml
-
 **/.idea/
-
 
 **/HELP.md
 **/.mvn/

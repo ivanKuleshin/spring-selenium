@@ -20,9 +20,9 @@ public class Google2Test extends SpringBaseTestNGTest {
     @Test
     public void googleTest() throws IOException {
         this.googlePage.goTo();
-        Assert.assertTrue(this.googlePage.isAt());
+        Assert.assertTrue(this.googlePage.hasLoaded());
         this.googlePage.getSearchComponent().search("selenium");
-        Assert.assertTrue(this.googlePage.getSearchResult().isAt());
+        Assert.assertTrue(this.googlePage.getSearchResult().hasLoaded());
         Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 10);
         this.screenshotService.takeScreenShot();
         this.googlePage.close();

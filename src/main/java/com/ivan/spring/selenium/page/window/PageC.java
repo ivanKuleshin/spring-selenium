@@ -1,12 +1,12 @@
 package com.ivan.spring.selenium.page.window;
 
 import com.ivan.spring.selenium.kelvin.annotation.Window;
-import com.ivan.spring.selenium.page.Base;
+import com.ivan.spring.selenium.page.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @Window("Page C")
-public class PageC  extends Base {
+public class PageC  extends BasePage {
 
     @FindBy(id = "area")
     private WebElement textArea;
@@ -16,7 +16,7 @@ public class PageC  extends Base {
     }
 
     @Override
-    public boolean isAt() {
+    public boolean hasLoaded() {
         return this.wait.until((d) -> this.textArea.isDisplayed());
     }
 }

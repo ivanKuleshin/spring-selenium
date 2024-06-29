@@ -1,4 +1,4 @@
-package com.ivan.spring.selenium.bdd;
+package com.ivan.spring.selenium.cucumber.glue;
 
 import com.ivan.spring.selenium.kelvin.annotation.LazyAutowired;
 import com.ivan.spring.selenium.kelvin.service.ScreenshotService;

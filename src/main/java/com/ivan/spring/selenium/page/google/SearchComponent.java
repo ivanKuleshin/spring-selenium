@@ -1,7 +1,7 @@
 package com.ivan.spring.selenium.page.google;
 
 import com.ivan.spring.selenium.kelvin.annotation.PageFragment;
-import com.ivan.spring.selenium.page.Base;
+import com.ivan.spring.selenium.page.BasePage;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 @PageFragment
-public class SearchComponent extends Base {
+public class SearchComponent extends BasePage {
 
     @FindBy(name = "q")
     private WebElement searchBox;
@@ -34,7 +34,7 @@ public class SearchComponent extends Base {
     }
 
     @Override
-    public boolean isAt() {
+    public boolean hasLoaded() {
         return this.wait.until((d) -> this.searchBox.isDisplayed());
     }
 

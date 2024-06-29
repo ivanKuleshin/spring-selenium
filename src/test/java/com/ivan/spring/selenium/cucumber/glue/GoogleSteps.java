@@ -1,4 +1,4 @@
-package com.ivan.spring.selenium.bdd;
+package com.ivan.spring.selenium.cucumber.glue;
 
 import com.ivan.spring.selenium.kelvin.annotation.LazyAutowired;
 import com.ivan.spring.selenium.page.google.GooglePage;
@@ -28,7 +28,7 @@ public class GoogleSteps {
 
     @Then("I should see search results page")
     public void clickSearch() {
-        Assert.assertTrue(this.googlePage.getSearchResult().isAt());
+        Assert.assertTrue(this.googlePage.getSearchResult().hasLoaded());
     }
 
     @Then("I should see at least {int} results")
