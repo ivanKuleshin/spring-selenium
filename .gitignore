@@ -11,6 +11,9 @@
 # Logs directory
 **/logs/
 
+# Reports folder
+**/reports/
+
 # Gradle files
 **/gradle/
 **/.gradle/
