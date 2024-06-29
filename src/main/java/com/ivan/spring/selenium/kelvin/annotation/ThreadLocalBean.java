@@ -10,9 +10,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotation to indicate that a bean should be scoped to the "browserScope".
+ * Annotation to indicate that a bean should be scoped to the "threadLocalScope".
  * This is a custom scope used for managing WebDriver instances for different browsers.
- * Beans annotated with `@ThreadScopeBean` will have their lifecycle managed according to the rules defined in the "browserScope" scope.
+ * Beans annotated with `@ThreadScopeBean` will have their lifecycle managed according to the rules defined in the "threadLocalScope" scope.
  *
  * @author ivanKuleshin
  */
