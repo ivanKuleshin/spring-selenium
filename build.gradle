@@ -59,10 +59,33 @@ tasks.register("springTest", Test) {
     }
 }
 
+def final DEFAULT_THREAD_COUNT = 5 as String
+
 tasks.register('cucumberTest', Test) {
     logger.info("Running cucumber tests")
     group = "verification"
-    useTestNG{
+
+    // Load the application.properties file
+    def appProperties = new Properties()
+    file("src/main/resources/application.properties").withInputStream { appProperties.load(it) }
+
+    // Get the threadCount from the application.properties file
+    def threadCountFromProperties = appProperties.getProperty('thread.count', DEFAULT_THREAD_COUNT)
+    println "Thread count from properties: $threadCountFromProperties"
+
+    // Get the threadCount from the console
+    def threadCountFromConsole = System.getProperty('thread.count', null)
+    println "Thread count from console: $threadCountFromConsole"
+
+    def finalThreadCount = threadCountFromConsole ?: threadCountFromProperties
+    // Set the 'dataproviderthreadcount' VM option to manage the thread count for the data provider
+    systemProperty 'dataproviderthreadcount', finalThreadCount
+    println "The final thread count is: " + finalThreadCount
+
+    useTestNG {
         suites("src/test/resources/cucumber-suite.xml")
+        // Set the parallel mode to tests with the thread count. Only for the testNG tests, not Cucumber
+        parallel = 'tests'
+        threadCount = finalThreadCount as int
     }
 }

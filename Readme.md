@@ -69,6 +69,26 @@ This project is a Selenium framework built using Spring Boot. It integrates vari
 ## Build and Run
 
 To build and run the project, use the following Gradle commands:
+```sh
+./gradlew clean build
+```
 
 ```sh
-./gradlew build
+./gradlew clean cucumberTest
+```
+
+```sh
+./gradlew clean springTest
+```
+
+### Parameters for Cucumber Tests
+- Via the `application.properties` file: You can set the `thread.count` property in the src/main/resources/application.properties file. 
+  This value will be used if no value is provided via the command line. **Default value is `5`**.
+- Via the command line: You can provide the `thread.count` parameter when running the tests in CLI.
+  This value will override the value set in the `application.properties` file.
+  For example:
+
+```sh
+# Run the tests in parallel with a thread count
+./gradlew cucumberTest -Dthread.count=3
+```
