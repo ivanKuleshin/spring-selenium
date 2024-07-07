@@ -15,9 +15,4 @@
             <class name="com.ivan.spring.selenium.googletest.MultiBrowserTest" />
         </classes>
     </test>
-<!--    <test name="test-4">-->
-<!--        <classes>-->
-<!--            <class name="com.ivan.spring.selenium.CucumberRunnerTest" />-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>

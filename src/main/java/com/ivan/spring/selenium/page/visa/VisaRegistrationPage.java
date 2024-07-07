@@ -2,17 +2,22 @@ package com.ivan.spring.selenium.page.visa;
 
 import com.ivan.spring.selenium.kelvin.annotation.Page;
 import com.ivan.spring.selenium.page.BasePage;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
 @Page
 public class VisaRegistrationPage extends BasePage {
+
+    @Autowired
+    private WebDriver driver;
 
     private static final Logger logger = LoggerFactory.getLogger(VisaRegistrationPage.class);
 

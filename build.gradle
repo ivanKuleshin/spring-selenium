@@ -38,7 +38,7 @@ dependencies {
 
     testImplementation "io.cucumber:cucumber-java:$cucumberVersion"
     testImplementation "io.cucumber:cucumber-spring:$cucumberVersion"
-    testImplementation "io.cucumber:cucumber-testng:$cucumberVersion"
+    implementation "io.cucumber:cucumber-testng:$cucumberVersion"
     testImplementation "org.testng:testng:$testngVersion"
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
@@ -55,7 +55,7 @@ dependencies {
 tasks.register("springTest", Test) {
     group = "verification"
     useTestNG {
-        suites("src/test/resources/testng-suite.xml")
+        suites("src/test/resources/spring-suite.xml")
     }
 }
 

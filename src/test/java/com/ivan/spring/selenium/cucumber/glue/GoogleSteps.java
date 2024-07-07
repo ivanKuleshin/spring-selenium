@@ -18,7 +18,7 @@ public class GoogleSteps {
 
     @Given("I am on the google site")
     public void launchSite() {
-        this.googlePage.goTo();
+        this.googlePage.open();
     }
 
     @When("I enter {string} as a keyword")

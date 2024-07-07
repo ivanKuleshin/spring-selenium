@@ -18,14 +18,13 @@ public class Google1Test extends SpringBaseTestNGTest {
     private ScreenshotService screenshotService;
 
     @Test
-    public void googleTest() throws IOException {
-        this.googlePage.goTo();
-        Assert.assertTrue(this.googlePage.hasLoaded());
+    public void googleTest()  {
+        this.googlePage.open();
         this.googlePage.getSearchComponent().search("spring boot");
+
         Assert.assertTrue(this.googlePage.getSearchResult().hasLoaded());
         Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 2);
-        this.screenshotService.takeScreenShot();
-        this.googlePage.close();
+        screenshotService.takeScreenShot();
     }
 
 }

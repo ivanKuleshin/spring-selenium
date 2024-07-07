@@ -10,7 +10,7 @@ import jakarta.annotation.PostConstruct;
 public abstract class BasePage {
 
     @Autowired
-    protected WebDriver driver;
+    private WebDriver driver;
 
     @Autowired
     protected WebDriverWait wait;
